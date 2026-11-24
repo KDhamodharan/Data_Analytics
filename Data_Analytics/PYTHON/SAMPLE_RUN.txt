@@ -1,0 +1,26 @@
+NOVA UNIVERSITY - SAMPLE RUN
+
+Example student details:
+Student ID: S001
+Name: Anu
+Email: anu@example.com
+Phone: 9876543210
+Department: Computer Science
+Attendance: 80
+Python: 80
+SQL: 70
+Excel: 90
+
+Expected academic summary:
+Total: 240 / 300
+Average: 80.00%
+Result: PASS
+Grade: A
+Exam: Eligible
+
+Example attendance checks:
+75  -> Eligible
+0   -> Not eligible
+100 -> Eligible
+-5  -> Rejected
+105 -> Rejected
