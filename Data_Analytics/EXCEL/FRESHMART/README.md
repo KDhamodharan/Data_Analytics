@@ -2,7 +2,8 @@
 
 An interactive **Microsoft Excel dashboard** designed to help FreshMart management monitor sales performance, profitability, order activity, and monthly trends.
 
-![FreshMart Sales Dashboard](assets/freshmart-dashboard.jpeg)
+<img width="1321" height="504" alt="DASHBOARD" src="https://github.com/user-attachments/assets/5086bb16-1509-4e1d-98c3-8d8e61921302" />
+
 
 ## 1. Project Overview
 
