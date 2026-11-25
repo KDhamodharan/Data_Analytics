@@ -6,7 +6,8 @@
 
 The dashboard below is the supplied TrendMart Excel dashboard snapshot.
 
-![TrendMart Dashboard](assets/DASHBOARD.jpeg)
+<img width="1197" height="492" alt="DASHBOARD" src="https://github.com/user-attachments/assets/4976b223-6ba2-41ed-8e77-713a37cd8147" />
+
 
 ## Project Overview
 
