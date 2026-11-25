@@ -1,0 +1,33 @@
+-- Add referential integrity after loading all parent and child records.
+USE Hospital_Analytics_DB;
+
+ALTER TABLE `Departments` ADD CONSTRAINT fk_departments_hospital_id FOREIGN KEY (`hospital_id`) REFERENCES `Hospitals` (`hospital_id`) ON UPDATE CASCADE ON DELETE RESTRICT;
+ALTER TABLE `Departments` ADD CONSTRAINT fk_departments_head_doctor_id FOREIGN KEY (`head_doctor_id`) REFERENCES `Doctors` (`doctor_id`) ON UPDATE CASCADE ON DELETE SET NULL;
+ALTER TABLE `Doctors` ADD CONSTRAINT fk_doctors_department_id FOREIGN KEY (`department_id`) REFERENCES `Departments` (`department_id`) ON UPDATE CASCADE ON DELETE SET NULL;
+ALTER TABLE `Doctors` ADD CONSTRAINT fk_doctors_hospital_id FOREIGN KEY (`hospital_id`) REFERENCES `Hospitals` (`hospital_id`) ON UPDATE CASCADE ON DELETE RESTRICT;
+ALTER TABLE `Rooms` ADD CONSTRAINT fk_rooms_hospital_id FOREIGN KEY (`hospital_id`) REFERENCES `Hospitals` (`hospital_id`) ON UPDATE CASCADE ON DELETE RESTRICT;
+ALTER TABLE `Appointments` ADD CONSTRAINT fk_appointments_patient_id FOREIGN KEY (`patient_id`) REFERENCES `Patients` (`patient_id`) ON UPDATE CASCADE ON DELETE RESTRICT;
+ALTER TABLE `Appointments` ADD CONSTRAINT fk_appointments_doctor_id FOREIGN KEY (`doctor_id`) REFERENCES `Doctors` (`doctor_id`) ON UPDATE CASCADE ON DELETE RESTRICT;
+ALTER TABLE `Appointments` ADD CONSTRAINT fk_appointments_hospital_id FOREIGN KEY (`hospital_id`) REFERENCES `Hospitals` (`hospital_id`) ON UPDATE CASCADE ON DELETE RESTRICT;
+ALTER TABLE `Admissions` ADD CONSTRAINT fk_admissions_patient_id FOREIGN KEY (`patient_id`) REFERENCES `Patients` (`patient_id`) ON UPDATE CASCADE ON DELETE RESTRICT;
+ALTER TABLE `Admissions` ADD CONSTRAINT fk_admissions_hospital_id FOREIGN KEY (`hospital_id`) REFERENCES `Hospitals` (`hospital_id`) ON UPDATE CASCADE ON DELETE RESTRICT;
+ALTER TABLE `Admissions` ADD CONSTRAINT fk_admissions_department_id FOREIGN KEY (`department_id`) REFERENCES `Departments` (`department_id`) ON UPDATE CASCADE ON DELETE SET NULL;
+ALTER TABLE `Admissions` ADD CONSTRAINT fk_admissions_admitting_doctor_id FOREIGN KEY (`admitting_doctor_id`) REFERENCES `Doctors` (`doctor_id`) ON UPDATE CASCADE ON DELETE SET NULL;
+ALTER TABLE `Admissions` ADD CONSTRAINT fk_admissions_room_id FOREIGN KEY (`room_id`) REFERENCES `Rooms` (`room_id`) ON UPDATE CASCADE ON DELETE SET NULL;
+ALTER TABLE `Treatments` ADD CONSTRAINT fk_treatments_admission_id FOREIGN KEY (`admission_id`) REFERENCES `Admissions` (`admission_id`) ON UPDATE CASCADE ON DELETE SET NULL;
+ALTER TABLE `Treatments` ADD CONSTRAINT fk_treatments_patient_id FOREIGN KEY (`patient_id`) REFERENCES `Patients` (`patient_id`) ON UPDATE CASCADE ON DELETE RESTRICT;
+ALTER TABLE `Treatments` ADD CONSTRAINT fk_treatments_doctor_id FOREIGN KEY (`doctor_id`) REFERENCES `Doctors` (`doctor_id`) ON UPDATE CASCADE ON DELETE SET NULL;
+ALTER TABLE `Insurance` ADD CONSTRAINT fk_insurance_patient_id FOREIGN KEY (`patient_id`) REFERENCES `Patients` (`patient_id`) ON UPDATE CASCADE ON DELETE RESTRICT;
+ALTER TABLE `Pharmacy` ADD CONSTRAINT fk_pharmacy_patient_id FOREIGN KEY (`patient_id`) REFERENCES `Patients` (`patient_id`) ON UPDATE CASCADE ON DELETE RESTRICT;
+ALTER TABLE `Pharmacy` ADD CONSTRAINT fk_pharmacy_medicine_id FOREIGN KEY (`medicine_id`) REFERENCES `Medicines` (`medicine_id`) ON UPDATE CASCADE ON DELETE RESTRICT;
+ALTER TABLE `Pharmacy` ADD CONSTRAINT fk_pharmacy_hospital_id FOREIGN KEY (`hospital_id`) REFERENCES `Hospitals` (`hospital_id`) ON UPDATE CASCADE ON DELETE RESTRICT;
+ALTER TABLE `Laboratory` ADD CONSTRAINT fk_laboratory_patient_id FOREIGN KEY (`patient_id`) REFERENCES `Patients` (`patient_id`) ON UPDATE CASCADE ON DELETE RESTRICT;
+ALTER TABLE `Laboratory` ADD CONSTRAINT fk_laboratory_doctor_id FOREIGN KEY (`doctor_id`) REFERENCES `Doctors` (`doctor_id`) ON UPDATE CASCADE ON DELETE SET NULL;
+ALTER TABLE `Laboratory` ADD CONSTRAINT fk_laboratory_hospital_id FOREIGN KEY (`hospital_id`) REFERENCES `Hospitals` (`hospital_id`) ON UPDATE CASCADE ON DELETE RESTRICT;
+ALTER TABLE `Employees` ADD CONSTRAINT fk_employees_hospital_id FOREIGN KEY (`hospital_id`) REFERENCES `Hospitals` (`hospital_id`) ON UPDATE CASCADE ON DELETE RESTRICT;
+ALTER TABLE `Employees` ADD CONSTRAINT fk_employees_department_id FOREIGN KEY (`department_id`) REFERENCES `Departments` (`department_id`) ON UPDATE CASCADE ON DELETE SET NULL;
+ALTER TABLE `Billing` ADD CONSTRAINT fk_billing_patient_id FOREIGN KEY (`patient_id`) REFERENCES `Patients` (`patient_id`) ON UPDATE CASCADE ON DELETE RESTRICT;
+ALTER TABLE `Billing` ADD CONSTRAINT fk_billing_admission_id FOREIGN KEY (`admission_id`) REFERENCES `Admissions` (`admission_id`) ON UPDATE CASCADE ON DELETE SET NULL;
+ALTER TABLE `Billing` ADD CONSTRAINT fk_billing_appointment_id FOREIGN KEY (`appointment_id`) REFERENCES `Appointments` (`appointment_id`) ON UPDATE CASCADE ON DELETE SET NULL;
+ALTER TABLE `Payments` ADD CONSTRAINT fk_payments_bill_id FOREIGN KEY (`bill_id`) REFERENCES `Billing` (`bill_id`) ON UPDATE CASCADE ON DELETE RESTRICT;
+ALTER TABLE `Payments` ADD CONSTRAINT fk_payments_patient_id FOREIGN KEY (`patient_id`) REFERENCES `Patients` (`patient_id`) ON UPDATE CASCADE ON DELETE RESTRICT;

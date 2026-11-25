@@ -1,0 +1,26 @@
+erDiagram
+    Clinics ||--o{ Specialists : employs
+    Clinics ||--o{ Consultations : hosts
+    Clinics ||--o{ Lab_Tests : performs
+    Clinics ||--o{ Staff : assigns
+    Members ||--o{ Consultations : books
+    Members ||--o{ Chronic_Care_Programs : enrolls
+    Members ||--o{ Package_Subscriptions : subscribes
+    Members ||--o{ Prescriptions : receives
+    Members ||--o{ Lab_Tests : undergoes
+    Members ||--o{ Claims : raises
+    Members ||--o{ Billing : billed
+    Members ||--o{ Payments : pays
+    Members ||--o{ Feedback : submits
+    Corporates ||--o{ Corporate_Members : enrolls
+    Members ||--o| Corporate_Members : linked_to
+    Specialists ||--o{ Consultations : handles
+    Specialists ||--o{ Chronic_Care_Programs : manages
+    Specialists ||--o{ Prescriptions : issues
+    Consultations ||--o| Telemedicine_Sessions : may_have
+    Consultations ||--o{ Prescriptions : generates
+    Consultations ||--o{ Claims : may_link
+    Consultations ||--o{ Billing : may_link
+    Consultations ||--o| Feedback : receives
+    Health_Packages ||--o{ Package_Subscriptions : purchased_as
+    Billing ||--o| Payments : settled_by
