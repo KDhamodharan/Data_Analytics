@@ -10,7 +10,8 @@ The project follows the **Novitech Manufacturing Revised Business Requirements D
 
 ## Dashboard Preview
 
-![Novitech Manufacturing Production Performance Dashboard](dashboard/NOVA_TECH_DASHBOARD.jpeg)
+<img width="895" height="504" alt="NOVA TECH DASHBOARD" src="https://github.com/user-attachments/assets/01a27603-a60b-4d0d-931b-128e80be1e32" />
+
 
 *Dashboard screenshot provided with the project files.*
 
