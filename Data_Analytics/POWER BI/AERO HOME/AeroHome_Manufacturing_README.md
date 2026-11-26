@@ -8,7 +8,8 @@ The solution is built around the business requirements defined in the **AeroHome
 
 ## Dashboard Preview
 
-![AeroHome Manufacturing Power BI Dashboard](dashboard/AERO_HOME_DASHBOARD.jpeg)
+<img width="891" height="505" alt="AERO HOME DASHBOARD" src="https://github.com/user-attachments/assets/7493dfc3-b00e-4e6c-9256-cf440b720a1b" />
+
 
 *Dashboard screenshot supplied with the project.*
 
